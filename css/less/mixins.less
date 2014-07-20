@@ -1,0 +1,244 @@
+/*********************
+CLEARFIXIN'
+*********************/
+
+// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
+.clearfix {
+  zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+}
+
+/*********************
+TOOLS
+*********************/
+
+// BORDER-BOX ALL THE THINGS! (http://paulirish.com/2012/box-sizing-border-box-ftw/)
+* { 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing:    border-box; 
+	box-sizing:         border-box; 
+}
+
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ 
+.image-replacement {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+@grey: #999;
+
+@real-blue: #00a1ff;
+@secondary-blue: #eaf7ff;
+@real-orange: #ffb320;
+@facebook-blue: #3d5b9a;
+
+
+@highlight-color:  #fc4537;
+@link-color: #c85147;
+@link-hover:  darken(@link-color, 9%);
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
+
+/*********************
+TYPOGRAPHY
+*********************/
+
+/* @import url(http://fonts.googleapis.com/css?family=Loved+by+the+King); */
+/* @import url(http://fonts.googleapis.com/css?family=Homemade+Apple); */
+/* @import url(http://fonts.googleapis.com/css?family=Wire+One); */
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
+/* @import url(http://fonts.googleapis.com/css?family=Coming+Soon); */
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+@import url(http://fonts.googleapis.com/css?family=Pinyon+Script);
+/* @import url(http://fonts.googleapis.com/css?family=Calligraffitti); */
+@font-face {
+    font-family: 'engravers_gothic_fsregular';
+    src: url('../fonts/EngraversGothic-Ext-webfont.eot');
+    src: url('../fonts/EngraversGothic-Ext-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/EngraversGothic-Ext-webfont.woff') format('woff'),
+         url('../fonts/EngraversGothic-Ext-webfont.ttf') format('truetype'),
+         url('../fonts/EngraversGothic-Ext-webfont.svg#engravers_gothic_fsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* @sans-serif: 'Wire One', Helvetica, arial, sans-serif; */
+@sans-serif: 'Julius Sans One', Helvetica, arial, sans-serif;
+
+@text-color: #555;
+	
+/* @handwritten: 'Loved by the King', cursive, serif; */
+/* @handwritten: 'Amatic SC', cursive, serif; */
+@handwritten: 'engravers_gothic_fsregular', helvetica, sans-serif;
+@script: 'Pinyon Script', cursive, serif;
+@title-hand: 'Reenie Beanie', cursive, serif;
+
+@text-font: Helvetica, arial, sans-serif;	
+@header-font: Helvetica, arial, sans-serif;
+
+.button {
+	position: relative;
+	font-size: 1.6em;
+	font-family: @sans-serif;	
+}
+/*  /// Layout ///  */
+
+.col {
+	width: 100%;
+	margin: 0;
+	padding: 3em 2% 6em;
+	.clearfix;
+	.block;
+	
+	@media screen and (min-width: 1099px) {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+.content-area {
+	> div {
+		.col;
+	}
+}
+.full {
+	width: 100%;
+	max-width: none;
+}
+.cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* height: 100%; */
+}
+.absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.content-margin-btm {
+	margin-bottom: 3em;
+}
+.one-col {
+	.col;	
+}
+.two-col {
+	.col;
+	padding: 0 6%;
+	
+	@media screen and (min-width: 680px) {
+		> div {
+			width: 47.5%;
+			margin: 0;
+			.fl-left;
+		}
+		div:first-child {
+		    margin-right: 5%;
+		}
+	}
+}
+.three-col {
+	.col;
+	padding: 0;
+	
+	@media screen and (min-width: 710px) {
+		> div {
+			width: 31.8%;
+			margin: 0 0 0 2.3%;
+			.fl-left;
+		}
+		div:first-child {
+		    margin-left: 0;
+		}
+	}
+}
+.four-col {
+	.col;
+	padding: 0;
+	
+	@media screen and (min-width: 800px) {
+		> div {
+			width: 23.5%;
+			margin: 0 0 0 2%;
+			.fl-left;
+		}
+		div:first-child {
+		    margin-left: 0;
+		}
+	}
+}
+.two-third-col-left {
+	.three-col;
+	
+	div:first-child {
+		width: 65.1%;
+	}
+}
+.two-third-col-right {
+	.three-col;
+	
+	div:first-child + div {
+		width: 65.1%;
+	}
+}
+
+/* // Real Brand Layout Styles // */
+
+.border-bottom {
+	border-bottom: 1px #e1e1e1 solid;
+}
+.border-top {
+	border-top: 1px #e1e1e1 solid;
+}
+.border-left {
+	border-top: 1px #e1e1e1 solid;
+}
+.border-right {
+	border-top: 1px #e1e1e1 solid;
+}
+.content {
+	padding: 2em;
+	background: #888;
+	background: rgba(255,255,255,0.2);
+	display: inline-block;
+	
+	h1, h2, h3, p {
+		color: #fff;
+	}
+}
+.inner-shadow {
+	box-shadow: inset 0 0 3em 1em rgba(0,0,0,0.05);
+}
+
+/*  /// Animated Stuff ///  */
+
+
+
+/* text alignment */
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+.fl-left { float: left; }
+.fl-right { float: right; }
+.clear { clear: both; }
+.block { display: block; }
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
