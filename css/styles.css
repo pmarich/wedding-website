@@ -641,8 +641,10 @@ sub {
     margin: 0 auto;
   }
 }
-section[role="main"] {
+.body section[role="main"] {
   height: 100%;
+}
+section[role="main"] {
   padding: 0;
 }
 section[role="main"] h1 {
@@ -1016,29 +1018,10 @@ td {
   z-index: 100;
   position: relative;
   /*
-#logo:after {
-		content: "";
-		width: 31vw;
-		height: 1px;
-		border-bottom: 1px solid #000;
-		border-bottom: 1px solid rgba(0,0,0,0.4);
-		.block;
-		transform: translate(-12vw,0);
-		-webkit-transform: translate(-12vw,0);
-		position: relative;
-		top: 2.1em;
+@media (min-aspect-ratio: 1/1) {
+		height: 100%;
 	}
 */
-  /*
-@media screen and (min-width: 680px) {
-		min-height: 480px;
-	}
-*/
-}
-@media screen and (min-width: 720px) and (min-aspect-ratio: 1/1) {
-  #hero {
-    height: 100%;
-  }
 }
 #hero > div {
   max-width: none;
@@ -1046,7 +1029,7 @@ td {
   overflow: hidden;
 }
 #hero .copy {
-  padding-top: 13vh;
+  padding-top: 8em;
   z-index: 1000;
   background: -moz-linear-gradient(top, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   /* FF3.6+ */
@@ -1065,7 +1048,7 @@ td {
   position: relative;
 }
 #hero #logo {
-  width: 80px;
+  width: 60px;
   width: 5.1vw;
   height: auto;
   margin: 0 auto 1.4em;
@@ -1097,14 +1080,14 @@ td {
   display: block;
 }
 #hero h1 {
-  margin: 0 auto;
+  margin: 0 auto 0.55em;
   position: relative;
   font-family: 'Pinyon Script', cursive, serif;
   font-weight: 200;
 }
 #hero h1 span {
   font-size: 9.2em;
-  font-size: 15.4vw;
+  font-size: 21vw;
   line-height: 1em;
   font-weight: 200;
   text-shadow: 0 3px 18px #fff;
@@ -1125,11 +1108,11 @@ td {
   letter-spacing: -0.8vw;
 }
 #hero h2 {
-  max-width: 33%;
+  max-width: 55%;
   margin: 0 auto 0.6em;
   font-family: 'engravers_gothic_fsregular', helvetica, sans-serif;
   font-size: 3em;
-  font-size: 2.2vw;
+  font-size: 3.8vw;
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -1140,7 +1123,7 @@ td {
   margin: 0 auto 0.6em;
   font-family: Helvetica, sans-serif;
   font-weight: 200;
-  font-size: 1.6em;
+  font-size: 1.4em;
   letter-spacing: 4px;
   position: relative;
   text-transform: uppercase;
@@ -1149,7 +1132,43 @@ td {
   font-size: 0.5em;
 }
 #hero .city {
-  text-transform: uppercase;
+  margin-bottom: 14em;
+}
+@media screen and (min-width: 640px) {
+  #hero .copy {
+    padding-top: 13vh;
+  }
+}
+@media screen and (min-width: 800px) and (min-aspect-ratio: 1/1) {
+  #hero {
+    height: 100%;
+  }
+  #hero .copy {
+    padding-top: 8em;
+    padding-top: 14vh;
+  }
+  #hero #logo {
+    width: 60px;
+    width: 5.1vw;
+  }
+  #hero h1 {
+    margin-bottom: 0;
+  }
+  #hero h1 span {
+    font-size: 15.4vw;
+  }
+  #hero h2 {
+    max-width: 33%;
+    margin-bottom: 0.6em;
+    font-size: 3em;
+    font-size: 2.2vw;
+  }
+  #hero p {
+    font-size: 1.6em;
+  }
+  #hero .city {
+    margin-bottom: 0;
+  }
 }
 #main-nav {
   width: 100%;
@@ -1190,6 +1209,8 @@ td {
   transition: all 0.2s ease-in-out;
   opacity: 0.8;
   text-shadow: 0 0 0 #ee2243;
+  z-index: 4001;
+  position: relative;
 }
 #main-nav a:hover {
   /* color: @link-color; */
@@ -1676,6 +1697,57 @@ li:first-child {
     margin-top: 120px;
   }
 }
+.page {
+  background: #000;
+  background: #000000 url('../img/bg-bokeh.jpg') no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  box-shadow: inset 0 -80px 400px rgba(0, 0, 0, 0);
+}
+.page header {
+  width: 100%;
+  min-height: 120px;
+  padding: 6em 1% 4em;
+  text-align: center;
+}
+.page #logo img {
+  max-width: 80px;
+  height: auto;
+  margin: 0 auto 3em;
+  display: block;
+  opacity: 0.25;
+}
+.page h1 {
+  margin: 0.2em auto 0.15em;
+  color: #fff;
+  font-size: 9em;
+  font-size: 8.8vw;
+  font-family: 'Pinyon Script', cursive, serif;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.4);
+  position: relative;
+  display: inline-block;
+}
+.page h1:before {
+  content: "";
+  border-bottom: 1px rgba(255, 255, 255, 0.8) solid;
+  width: 22px;
+  height: 1px;
+  position: absolute;
+  left: -31px;
+  top: 0.45em;
+  display: block;
+}
+.page h1:after {
+  content: "";
+  border-bottom: 1px rgba(255, 255, 255, 0.8) solid;
+  width: 22px;
+  height: 1px;
+  position: absolute;
+  right: -31px;
+  top: 0.45em;
+  display: block;
+}
 #gallery {
   zoom: 1;
   *zoom: 1;
@@ -1690,14 +1762,93 @@ li:first-child {
   clear: both;
 }
 #gallery ul {
-  margin: 0;
+  margin: 0 2%;
   padding: 0;
+  zoom: 1;
+  *zoom: 1;
+  background-color: #000;
+  box-shadow: 0 2px 150px 60px #000;
+}
+#gallery ul:before,
+#gallery ul:after {
+  content: "";
+  display: table;
+}
+#gallery ul:after {
+  clear: both;
 }
 #gallery li {
-  width: 20%;
-  min-height: 220px;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1em;
+  zoom: 1;
+  *zoom: 1;
+}
+#gallery li:before,
+#gallery li:after {
+  content: "";
+  display: table;
+}
+#gallery li:after {
+  clear: both;
+}
+#gallery li div {
+  width: 24.5%;
+  height: auto;
+  margin: 0 1% 0 0;
   float: left;
-  box-shadow: inset 0 0 14px #fff;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  z-index: 2000;
+  position: relative;
+}
+#gallery li div img {
+  /* width: 112%; */
+  height: auto;
+  transition: all 0.2s ease-in-out;
+  transform: translate(0, 0);
+  /* position: absolute; */
+  position: relative;
+}
+#gallery li div:last-child {
+  margin-right: 0;
+}
+#gallery li div:first-child {
+  width: 49%;
+}
+#gallery li div:nth-child(2) {
+  width: 50%;
+  margin-right: 0;
+  box-shadow: 0 10px #000;
+  position: relative;
+  z-index: 2020;
+}
+#gallery li div:nth-child(2) img {
+  transform: translate(0, -20%);
+}
+#gallery li div:hover img {
+  /* transform: translate(0.1%,-0.2%); */
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+#gallery li:nth-child(2) div {
+  margin: 0 0 0 1%;
+  float: right;
+}
+#gallery li:nth-child(2) div:last-child {
+  margin-left: 0;
+}
+#gallery li:nth-child(2) div:nth-child(2) {
+  margin-left: 0;
+}
+#gallery .small {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1200px) {
+  #gallery {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 }
 .go-to-gal {
   width: 100%;
@@ -1712,6 +1863,11 @@ li:first-child {
   transition: all 0.3s ease-in-out;
   display: none;
 }
+/*
+.litebox-container {
+	cursor: pointer;
+}
+*/
 /*
 #gallery:hover .go-to-gal {
 	display: block;
