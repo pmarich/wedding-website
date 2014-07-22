@@ -19,6 +19,7 @@ $(document).ready(function() {
      	} else {
 	     	$("feat-img").css('display','none');
      	}
+     	
      
      /* // - - Scroll Function - - // */
 
@@ -26,7 +27,7 @@ $(document).ready(function() {
      $(".scroll").click(function(event){		
 		event.preventDefault();
 		$('html,body').animate({scrollTop:$(this.hash).offset().top},'slow');
-	});
+	 });
       
 	/*
 window.onscroll = function(event) {
