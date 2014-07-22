@@ -33,38 +33,12 @@ Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
 *********************/
 
-@grey: #999;
-
-@real-blue: #00a1ff;
-@secondary-blue: #eaf7ff;
-@real-orange: #ffb320;
-@facebook-blue: #3d5b9a;
-
-
-@highlight-color:  #fc4537;
-@link-color: #c85147;
-@link-hover:  darken(@link-color, 9%);
-
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
-
 
 /*********************
 TYPOGRAPHY
 *********************/
 
-/* @import url(http://fonts.googleapis.com/css?family=Loved+by+the+King); */
-/* @import url(http://fonts.googleapis.com/css?family=Homemade+Apple); */
-/* @import url(http://fonts.googleapis.com/css?family=Wire+One); */
-@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One);
-/* @import url(http://fonts.googleapis.com/css?family=Coming+Soon); */
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
-@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
 @import url(http://fonts.googleapis.com/css?family=Pinyon+Script);
-/* @import url(http://fonts.googleapis.com/css?family=Calligraffitti); */
 @font-face {
     font-family: 'engravers_gothic_fsregular';
     src: url('../fonts/EngraversGothic-Ext-webfont.eot');
@@ -77,25 +51,20 @@ TYPOGRAPHY
 
 }
 
-/* @sans-serif: 'Wire One', Helvetica, arial, sans-serif; */
-@sans-serif: 'Julius Sans One', Helvetica, arial, sans-serif;
+@script: 'Pinyon Script', cursive, serif;	
+@title-script: 'engravers_gothic_fsregular', helvetica, sans-serif;
+@text-font: Helvetica, arial, sans-serif;	
 
 @text-color: #555;
-	
-/* @handwritten: 'Loved by the King', cursive, serif; */
-/* @handwritten: 'Amatic SC', cursive, serif; */
-@handwritten: 'engravers_gothic_fsregular', helvetica, sans-serif;
-@script: 'Pinyon Script', cursive, serif;
-@title-hand: 'Reenie Beanie', cursive, serif;
-
-@text-font: Helvetica, arial, sans-serif;	
-@header-font: Helvetica, arial, sans-serif;
+@highlight-color:  #fc4537;
+@link-color: #c85147;
 
 .button {
 	position: relative;
 	font-size: 1.6em;
-	font-family: @sans-serif;	
+	font-family: @text-font;	
 }
+
 /*  /// Layout ///  */
 
 .col {
@@ -132,103 +101,9 @@ TYPOGRAPHY
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-.content-margin-btm {
-	margin-bottom: 3em;
-}
-.one-col {
-	.col;	
-}
-.two-col {
-	.col;
-	padding: 0 6%;
-	
-	@media screen and (min-width: 680px) {
-		> div {
-			width: 47.5%;
-			margin: 0;
-			.fl-left;
-		}
-		div:first-child {
-		    margin-right: 5%;
-		}
-	}
-}
-.three-col {
-	.col;
-	padding: 0;
-	
-	@media screen and (min-width: 710px) {
-		> div {
-			width: 31.8%;
-			margin: 0 0 0 2.3%;
-			.fl-left;
-		}
-		div:first-child {
-		    margin-left: 0;
-		}
-	}
-}
-.four-col {
-	.col;
-	padding: 0;
-	
-	@media screen and (min-width: 800px) {
-		> div {
-			width: 23.5%;
-			margin: 0 0 0 2%;
-			.fl-left;
-		}
-		div:first-child {
-		    margin-left: 0;
-		}
-	}
-}
-.two-third-col-left {
-	.three-col;
-	
-	div:first-child {
-		width: 65.1%;
-	}
-}
-.two-third-col-right {
-	.three-col;
-	
-	div:first-child + div {
-		width: 65.1%;
-	}
-}
-
-/* // Real Brand Layout Styles // */
-
-.border-bottom {
-	border-bottom: 1px #e1e1e1 solid;
-}
-.border-top {
-	border-top: 1px #e1e1e1 solid;
-}
-.border-left {
-	border-top: 1px #e1e1e1 solid;
-}
-.border-right {
-	border-top: 1px #e1e1e1 solid;
-}
-.content {
-	padding: 2em;
-	background: #888;
-	background: rgba(255,255,255,0.2);
-	display: inline-block;
-	
-	h1, h2, h3, p {
-		color: #fff;
-	}
-}
 .inner-shadow {
 	box-shadow: inset 0 0 3em 1em rgba(0,0,0,0.05);
 }
-
-/*  /// Animated Stuff ///  */
-
-
 
 /* text alignment */
 .text-left   { text-align: left; }

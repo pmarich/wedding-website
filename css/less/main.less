@@ -1,14 +1,6 @@
 /* ==|== primary styles =====================================================
-   Author: pmarich@realnetworks.com
+   Author: pat@pmarich.com
    ========================================================================== */
-
-/* // HEADER STYLES // */
-
-@import 'header-sub.less';
-
-/* // END HEADER // */
-
-
 
 /* // - - MAIN STYLES FOR INDIVIDUAL PAGE - - '' */
 
@@ -107,7 +99,7 @@
 	h2 {
 		max-width: 55%;
 		margin: 0 auto 0.6em;
-		font-family: @handwritten;
+		font-family: @title-script;
 		font-size: 3em;
 		font-size: 3.8vw;
 		font-weight: 200;
@@ -184,35 +176,32 @@
 	background-color: #000;
 	background-color: rgba(0,0,0,0.25);
 	box-shadow: 0 -1px 0 #000;
-	box-shadow: 0 -1px 0 #000, inset 0 0 20px rgba(0,0,0,0.1), inset 0 -2px 0 rgba(255,255,255,0.3), inset 0 -4px 0 #000;
-	/* box-shadow: 0 -4px rgba(255,255,255,0.2), inset 0 -1px 0 @highlight-color; */
+	box-shadow: 0 -1px 0 #000, inset 0 0 20px rgba(0,0,0,0.1), inset 0 -2px 0 rgba(255,255,255,0.6), inset 0 -4px 0 #000;
 	box-sizing: border-box;
 	.clearfix;
 	
 	a {
 		margin: 0.6em 0 0;
-		font-family: @handwritten;
+		font-family: @title-script;
 		text-transform: uppercase;
 		letter-spacing: 4px;
-		/* color: @link-color; */
 		color: #000;
 		transition: all 0.2s ease-in-out;
 		opacity: 0.8;
-		text-shadow: 0 0 0 #ee2243;
+		text-shadow: 0 0 0 rgba(0,0,0,0);
 		z-index: 4001;
 		position: relative;
 	}
 	a:hover {
-		/* color: @link-color; */
-		opacity: 1;
-		text-shadow: 0 0 12px #ee2243;
+		color: #fff;
+		opacity: 0.8;
+		text-shadow: 0 0 12px rgba(0,0,0,1),0 4px 22px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,1);
 	}
 	ul {
 		width: 66.666%;
 		margin: 1em 16.666%;
 		padding: 0;
 		.clearfix;
-		/* background-color: #000; */
 	}
 	li {
 		width: 33.333%;
@@ -237,7 +226,7 @@
 		background: transparent;
 		font-size: 1.35em;
 		color: #000;
-		/* color: #ee2243; */
+		text-shadow: 0 0 0 rgba(0,0,0,0);
 	}
 	/*
 @media screen and (min-width: 560px) {
@@ -245,11 +234,10 @@
 	}
 */
 	.more:hover {
-		/* padding: 0.4em 1.1em; */
-		background: rgba(0,0,0,0.8);
-		/* color: @link-color; */
-		color: #e1e1e1;
-		/* box-shadow: 0 3px 12px 1px rgba(0,0,0,0.3); */
+		background: rgba(0,0,0,0.4);
+		color: rgba(255,255,255,0.8);
+		text-shadow: 0 0 12px rgba(0,0,0,1),0 4px 22px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,1);
+		box-shadow: 0 3px 12px 1px rgba(0,0,0,0.1);
 		text-shadow: none;
 	}
 }
@@ -265,17 +253,15 @@
 	z-index: 1;
 }
 */
-#feat-img {
+#feat-vid {
 	margin: 0;
-	height: 0;
-	position: fixed;
+	/* height: 0; */
+	position: absolute;
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, 0);
 	-webkit-transform: translate(-50%, 0);
 	transition: all 0.3s ease-in-out;
-	/* filter: blur(1px); */
-	/* -webkit-filter: blur(1px); */
 	z-index: 0;
 	overflow: hidden;
 	
@@ -286,6 +272,23 @@
 	@media (max-aspect-ratio: 2/1) {
 		width: auto;
 		height: 100%;
+	}
+	/*
+video {
+		width: 100%;
+		height: auto;
+	}
+*/
+	
+}
+@media screen and (max-width: 720px) {
+	#feat-img {
+		width: 100%;
+		height: 100%;
+		.absolute-center;
+		background: transparent url('../img/bg-movie_katie-pat.jpg') no-repeat center center;
+		background-size: cover;
+		.block;
 	}
 }
 
@@ -345,7 +348,6 @@
 	}
 }
 #where {
-	/* .two-col; */
 	width: 100%;
 	max-width: none;
 	padding: 3em 10% 6em;
@@ -367,7 +369,7 @@
 	h3 {
 		max-width: 25.5%;
 		margin: 0 auto 1.4em;
-		font-family: @handwritten;
+		font-family: @title-script;
 		font-size: 2em;
 		color: #fff;
 		border-top: 1px solid rgba(255,255,255,0.4);
@@ -376,13 +378,13 @@
 		text-transform: uppercase;
 		
 	}
-	.deets, aside, small {
-		min-height: 140px;
+	.deets, aside, .links {
+		min-height: 160px;
 	}
 	.deets {
 		width: 41%;
 		margin: 0;
-		padding: 0 3%;
+		padding: 2em 3% 0;
 		border-right: 1px solid #888;
 		border-right: 1px solid rgba(255,255,255,0.14);
 		overflow: hidden;
@@ -391,7 +393,6 @@
 		p {
 			max-width: 21em;
 			margin: 0 auto;
-			/* text-align: left; */
 		}
 	}
 	p {
@@ -421,12 +422,13 @@
 		}
 	}
 	small {
-		margin: 0 auto 3em;
-		font-size: 1.4em;
+		margin: 1.2em auto 1.2em;
+		font-size: 1.8em;
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		color: #fff;
 		position: relative;
+		.block;
 	}
 	small:after {
 		content: "";
@@ -435,14 +437,14 @@
 		height: 1px;
 		position: absolute;
 		right: 50%;;
-		top: 1.5em;
+		top: 1.8em;
 		transform: translate(11px,0);
 		display: block;
 	}
 	.links {
 		width: 29%;
 		margin: 0;
-		padding: 0 4%;
+		padding: 2em 4% 0;
 		.fl-left;
 		
 		ul {
@@ -453,26 +455,9 @@
 			width: 100%;
 			margin: 0 0 0.6em;
 			padding: 0;
-			/* border-bottom: 1px rgba(255,255,255,0.4) solid; */
-			background-color: rgba(255,255,255,0.05);
-			border: 1px solid rgba(255,255,255,0.05);
-			border-radius: 8px;
-			.block;
+			.button
 			
-			a {
-				padding: 1em 0;
-				color: @link-color;
-				text-transform: uppercase;
-				letter-spacing: 1px;
-				font-size: 1.2em;
-				.block;
-			}
 		}
-		/*
-li:first-child {
-			padding-top: 0;
-		}
-*/
 	}
 	.pics {
 		width: 33%;
@@ -659,6 +644,8 @@ li:first-child {
 	}
 }
 
+/* - - // Additional Pages // - - */
+
 .page {
 	background: #000;
 	background: #000 url('../img/bg-bokeh.jpg') no-repeat center center fixed;
@@ -666,31 +653,37 @@ li:first-child {
 	-webkit-background-size: cover;
 	box-shadow: inset 0 -80px 400px rgba(0,0,0,0);
 	
+	.back {
+		.fl-left;
+	}
 	header {
 		width: 100%;
 		min-height: 120px;
-		padding: 6em 1% 4em;
+		padding: 1em 1% 4em;
 		text-align: center;
 	}
 	#logo {
+		.block;
+		clear: both;
+		
 		img {
 			max-width: 80px;
 			height: auto;
-			margin: 0 auto 3em;
-			.block;
+			margin: 0 auto 1em;
 			opacity: 0.25;
+			
 		}
 	}
 	h1 {
-		margin: 0.2em auto 0.15em;
+		margin: 0.2em auto 0.1em;
 		color: #fff;
 		font-size: 9em;
-		font-size: 8.8vw;
+		font-size: 8vw;
 		font-family: @script;
 		text-align: center;
 		text-shadow: 0 2px 0 rgba(255,255,255,0.4);
 		position: relative;
-		display: inline-block;
+		.block;
 	}
 	h1:before {
 		content: "";
@@ -713,6 +706,8 @@ li:first-child {
 		display: block;
 	}
 }
+
+/* - - // Gallery // - - */
 
 #gallery {
 	.clearfix;
@@ -742,12 +737,12 @@ li:first-child {
 			position: relative;
 			
 				img {
-					/* width: 112%; */
+					width: 100%;
 					height: auto;
 					transition: all 0.2s ease-in-out;
 					transform: translate(0,0);
-					/* position: absolute; */
 					position: relative;
+					z-index: 1900;
 				}
 		}
 		div:last-child {
@@ -762,16 +757,15 @@ li:first-child {
 			box-shadow: 0 10px #000;
 			position: relative;
 			z-index: 2020;
-			
-			img {
-				transform: translate(0,-20%);
-			}
 		}
 		div:hover {
+						
 			img {
-				/* transform: translate(0.1%,-0.2%); */
+				width: 102%;
+				transform: translate(-1%,-1%);
 				filter: blur(2px);
 				-webkit-filter: blur(2px);
+				float: none;
 			}
 		}
 	}
@@ -787,8 +781,6 @@ li:first-child {
 			margin-left: 0;
 		}
 	}
-	
-	
 	.small {
 		margin-bottom: 0;
 	}
@@ -810,29 +802,7 @@ li:first-child {
 	transition: all 0.3s ease-in-out;
 	display: none;
 }
-/*
-.litebox-container {
-	cursor: pointer;
-}
-*/
-/*
-#gallery:hover .go-to-gal {
-	display: block;
-}
-*/
+
 /* // FOOTER STYLES // */
 
 @import 'footer-main.less';
-
-
-/* // Use this code for a sticky footer on pages with little content // */
-
-/*
-@media screen and (min-height: 750px) {
-	footer {
-	    width: 100%;
-	    position: absolute;
-	    bottom: 0;
-	}
-}
-*/
