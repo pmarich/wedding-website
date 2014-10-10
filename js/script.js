@@ -8,42 +8,52 @@
 
 $(document).ready(function() {
      
-     var useVid = window.matchMedia("(min-width: 720px)");
-     
-     	if (useVid.matches) {
-	 	    $("#feat-img").html(
-	 	    '<video id="feat-vid" poster="img/bg-movie_katie-pat.jpg" autoplay loop>' +
-	 	    '<source src="img/bg-movie_katie-pat.mp4" type="video/mp4">' +
-	 	    '<source src="img/bg-movie_katie-pat.ogv" type="video/ogg"></video'
-	 	    );
-     	} else {
-	     	$("feat-img").css('display','none');
-     	}
-     	
-     
      /* // - - Scroll Function - - // */
-
      
      $(".scroll").click(function(event){		
 		event.preventDefault();
 		$('html,body').animate({scrollTop:$(this.hash).offset().top},'slow');
 	 });
-      
-	/*
-window.onscroll = function(event) {
-		$("#feat-img").css('position','fixed');	
-	}
-*/	
-		/* - - SVG Support - - */
-		
-		/*
-if (!Modernizr.svg) {
-			$("#logo").attr("src", "");
-		}
-*/
-		
-});
+	 
+	 /* // - - Menu Toggle - - // */
+	 
+	 var menu = $('nav ul');
 
+	 $('.menu-toggle').click(function() {
+	 	$(menu).slideToggle('slow');
+	 });
+	 
+	 if ($(window).width() < 640) {
+	 	$(menu).css('display','none');
+	 } else {
+	 	$(menu).css('display','block');
+	 }
+	 
+	 $(window).on('resize', function() {
+	         if ($(window).width() < 640) {
+	 			$(menu).css('display','none');
+	 		} else {
+	 			$(menu).css('display','block');
+	 		}
+	 });
+	 
+	 
+	/* // - - Lightwindow - - // */
+	
+	var vidPopup = $('.pop-up');
+	
+	/* // Video Playback // */
+	
+	$('.trigger-window').click(function() {
+		$(vidPopup).fadeToggle('slow');
+	});
+	
+	/* // Close Window // */
+	
+	$('.icon-close').click(function() {
+		$(vidPopup).fadeToggle('slow');
+	});
+});
 
 /* // - - Gallery Grid - - // */
 
@@ -61,4 +71,7 @@ $('.large').css('max-height',$('.large').height());
 	});
 
 });
+
+
+
  
